@@ -90,14 +90,14 @@ body {
 
 .entry {
     display: grid;
-    grid-template-columns: 140px 1fr; /* <-- DATUM NEBENEINANDER */
+    grid-template-columns: 140px 1fr;
     column-gap: 10px;
     margin-bottom: 10px;
 }
 
 .date {
     font-weight: bold;
-    white-space: nowrap; /* kein Umbruch */
+    white-space: nowrap;
 }
 
 ul {
@@ -150,7 +150,7 @@ ul {
             <img src="foto.jpeg" alt="Bewerbungsfoto">
         </div>
 
-        <h3>Geburtsdatum/-Ort:</h3>
+        <h3>Geburtsdatum / -Ort</h3>
         <p>22.02.1993 Medias – Rumänien</p>
 
         <h3>Kontakt</h3>
@@ -164,7 +164,7 @@ ul {
         <p>deutsch, rumänisch</p>
 
         <h3>Sonstiges</h3>
-        <p>Familienstand: Verheiratet</p>
+        <p>Familienstand: verheiratet</p>
         <p>Führerschein: Klasse B</p>
 
         <h3>Sprachen</h3>
@@ -260,13 +260,23 @@ ul {
                 <div class="line">Alexandru-Constantin Schneider</div>
             </div>
             <div class="signature-right">
-                 Filderstadt, <span id="current-date"></span>
+                Filderstadt, <span id="current-date"></span>
             </div>
         </div>
 
     </div>
-
 </div>
+
+<!-- ========== DYNAMIC DATE (GITHUB PAGES) ========== -->
+<script>
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const year = today.getFullYear();
+
+    document.getElementById("current-date").textContent =
+        `${day}.${month}.${year}`;
+</script>
 
 </body>
 </html>
