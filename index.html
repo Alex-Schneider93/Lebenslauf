@@ -1,140 +1,272 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Lebenslauf – Alexandru-Constantin Schneider</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<title>Lebenslauf – Alexandru-Constantin Schneider</title>
+
+<style>
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ccc;
+}
+
+.cv {
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 70mm 1fr;
+}
+
+/* ========== LEFT SIDEBAR ========== */
+.sidebar {
+    background: #bfbfbf;
+    padding: 25px 20px;
+    font-size: 13px;
+}
+
+.photo {
+    width: 120px;
+    margin: 0 auto 20px;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.sidebar h3 {
+    font-size: 14px;
+    margin: 18px 0 6px;
+}
+
+.sidebar p {
+    margin: 3px 0;
+}
+
+.sidebar ul {
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+/* ========== RIGHT CONTENT ========== */
+.content {
+    padding: 30px 35px;
+}
+
+.name {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.name .first {
+    font-size: 22px;
+    color: #777;
+}
+
+.name .last {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-weight: bold;
+    margin: 25px 0 10px;
+    font-size: 15px;
+}
+
+/* TIMELINE */
+.timeline {
+    font-size: 13px;
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: 140px 1fr; /* <-- DATUM NEBENEINANDER */
+    column-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-weight: bold;
+    white-space: nowrap; /* kein Umbruch */
+}
+
+ul {
+    margin: 5px 0 10px 18px;
+}
+
+/* SIGNATURE */
+.signature {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.signature-left {
+    width: 250px;
+}
+
+.signature-left img {
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.signature-left .line {
+    border-top: 1px solid #000;
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+.signature-right {
+    font-size: 13px;
+}
+
+/* PRINT */
+@media print {
     body {
-      font-family: "Roboto", sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
+        background: none;
     }
-    .container {
-      display: flex;
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    /* Linke Spalte */
-    .sidebar {
-      width: 30%;
-      background: #dce6f2;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .sidebar img {
-      width: 160px;
-      height: 210px;
-      border-radius: 6px;
-      object-fit: contain;
-      margin-bottom: 30px;
-    }
-    .sidebar h2 {
-      font-family: "Libre Baskerville", serif;
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    .sidebar p {
-      text-align: left;
-      font-size: 14px;
-      margin: 6px 0;
-    }
-    .label {
-      font-weight: bold;
-    }
-    /* Rechte Spalte */
-    .content {
-      width: 70%;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-    h1 {
-      font-family: "Libre Baskerville", serif;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #333;
-      margin-top: 0;
-      font-size: 18px;
-    }
-    .box {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #f4f4f9;
-      border-left: 5px solid #0d945f;
-      border-radius: 5px;
-    }
-    /* Timeline Tabelle */
-    .timeline {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .timeline td {
-      padding: 6px 10px;
-      vertical-align: top;
-      font-size: 14px;
-    }
-    .timeline td:first-child {
-      width: 30%;
-      font-weight: bold;
-      color: #042135;
-      white-space: nowrap;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- Linke Spalte -->
-    <aside class="sidebar">
-      <img src="Bewerbungsfoto1.jpeg">
-      <h2>Alexandru-Constantin Schneider</h2>
-      <p><span class="label">Geburtsdatum/-Ort:</span><br>22.02.1993 Medias (Rumänien)</p>
-      <p><span class="label">Kontakt:</span><br>Mobil: 0178 2134450<br>E-Mail: schneider.alex93@icloud.com</p>
-      <p><span class="label">Adresse:</span><br>Gotthard-Müller-Straße 15<br>70794 Filderstadt</p>
-      <p><span class="label">Staatsangehörigkeit:</span><br>deutsch, rumänisch</p>
-    </aside>
 
-    <!-- Rechte Spalte -->
-    <main class="content">
-      <h1>Lebenslauf</h1>
+<div class="cv">
 
-      <!-- Container 1: Timeline -->
-      <div class="box">
-        <h2>Berufliche / Schulische Laufbahn</h2>
-        <table class="timeline">
-          <tr><td>06.2000 – 06.2000</td><td>Grundschule I-IV Biertan (Rumänien)</td></tr>
-          <tr><td>09.2005 – 06.2009</td><td>Scoala Gimnaziala V-VII Biertan (Rumänien)</td></tr>
-          <tr><td>09.2009 – 06.2011</td><td>Colegiul Scoala Nationala de Gaz Medias (Rumänien)</td></tr>
-          <tr><td>07.2011 – 01.04.2013</td><td>Arbeitssuchend in Deutschland</td></tr>
-          <tr><td>16.04.2013 – 21.06.2013</td><td>Weiterbildung als Verkäufer (Kellner) im Gastgewerbebetrieb</td></tr>
-          <tr><td>01.07.2013 - 30.09.2013</td><td>Weiterbildung als Sicherheitsbeamter bei SC.IPPONMED.S.R.L Medias (Rumänien)</td></tr>
-          <tr><td>10.2013 – 31.08.2014</td><td>Arbeitssuchend in Deutschland</td></tr>
-          <tr><td>09.2014 – 31.10.2021</td><td>Maschinenführer, Vöhringer GmbH & Co.KG</td></tr>
-          <tr><td>11.2021 – 15.03.2022</td><td>Deutsche Post AG Engstingen</td></tr>
-          <tr><td>16.03.2022 – 28.02.2025</td><td>Servicetechniker, MST-Microstrahltechnik GmbH</td></tr>
-          <tr><td>10.03.2025 – 04.04.2025</td><td>Weiterbildung GFN (Word & Excel)</td></tr>
-          <tr><td>07.04.2025 – 02.05.2025</td><td>Vorbereitungskurs IT-Umschulung: Basiswissen</td></tr>
-          <tr><td>05.05.2025 – 30.05.2025</td><td>Programmierung Basiswissen (Python)</td></tr>
-          <tr><td>02.06.2025 – 27.06.2025</td><td>Vorbereitungskurs IT: Informations- und Telekommunikationstechnik</td></tr>
-          <tr><td>30.06.2025 – 04.07.2025</td><td>Mathematik - Vorbereitungskurs IT-Umschulung</td></tr>
-          <tr><td>07.07.2025 – Heute</td><td>Umschulung Fachinformatiker für Anwendungsentwicklung (GFN Stuttgart)</td></tr>
-        </table>
-      </div>
+    <!-- ========== LEFT ========== -->
+    <div class="sidebar">
+        <div class="photo">
+            <img src="foto.jpg" alt="Bewerbungsfoto">
+        </div>
 
-      <!-- Container 2: Sonstiges -->
-      <div class="box">
-        <h2>Sonstiges</h2>
-        <p><span class="label">Sprachen:</span> Deutsch und Rumänisch in Wort und Schrift</p>
-        <p><span class="label">Führerschein:</span> Klasse B (seit 20.07.2016)</p>
-      </div>
-    </main>
-  </div>
+        <h3>Geburtsdatum/-Ort:</h3>
+        <p>22.02.1993 Medias – Rumänien</p>
+
+        <h3>Kontakt</h3>
+        <p>Mobil: 0178 2134450</p>
+        <p>E-Mail: schneider.alex93@icloud.com</p>
+
+        <h3>Adresse</h3>
+        <p>Gotthard-Müller-Straße 15<br>70794 Filderstadt</p>
+
+        <h3>Staatsangehörigkeit</h3>
+        <p>deutsch, rumänisch</p>
+
+        <h3>Sonstiges</h3>
+        <p>Familienstand: Verheiratet</p>
+        <p>Führerschein: Klasse B</p>
+
+        <h3>Sprachen</h3>
+        <ul>
+            <li>Deutsch</li>
+            <li>Rumänisch</li>
+            <li>Englisch – Grundkenntnisse</li>
+        </ul>
+    </div>
+
+    <!-- ========== RIGHT ========== -->
+    <div class="content">
+
+        <div class="name">
+            <div class="first">Alexandru – Constantin</div>
+            <div class="last">Schneider</div>
+        </div>
+
+        <div class="section-title">Berufliche / Schulische Laufbahn</div>
+
+        <div class="timeline">
+
+            <div class="entry">
+                <div class="date">03.2025 – HEUTE</div>
+                <div>Umschulung Fachinformatiker für Anwendungsentwicklung – GFN GmbH, Stuttgart</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">10.2024 – 07.2025</div>
+                <div>
+                    Weiterbildungen bei GFN GmbH Stuttgart:
+                    <ul>
+                        <li>Word & Excel</li>
+                        <li>IT-Umschulung: Basiswissen</li>
+                        <li>Programmierung Basiswissen – Python</li>
+                        <li>Informations- und Telekommunikationstechnik</li>
+                        <li>Mathematik – Vorbereitungskurs IT Umschulung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="date">03.2022 – 02.2025</div>
+                <div>Servicetechniker – MST-Microstrahltechnik GmbH, Kusterdingen</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">11.2021 – 03.2022</div>
+                <div>Zustellung – Deutsche Post AG, Engstingen</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">09.2014 – 10.2021</div>
+                <div>Maschinenführer – Vöhringer GmbH & Co. KG, Trochtelfingen</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">10.2013 – 08.2014</div>
+                <div>Arbeitssuchend in Deutschland</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">07.2013 – 09.2013</div>
+                <div>Weiterbildung als Sicherheitsbeamter – SC.IPPON MED.S.R.L, Medias (Rumänien)</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">04.2013 – 06.2013</div>
+                <div>Weiterbildung als Verkäufer (Kellner) im Gastgewerbebetrieb – Rumänien</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">07.2011 – 04.2013</div>
+                <div>Arbeitssuchend in Deutschland</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">09.2009 – 06.2011</div>
+                <div>Colegiul Scoala Nationala de Gaz Medias – Rumänien</div>
+            </div>
+
+            <div class="entry">
+                <div class="date">09.2005 – 06.2009</div>
+                <div>Scoala Gimnaziala V–VII Biertan – Rumänien</div>
+            </div>
+
+        </div>
+
+        <!-- SIGNATURE -->
+        <div class="signature">
+            <div class="signature-left">
+                <img src="signatur.png" alt="Unterschrift">
+                <div class="line">Alexandru-Constantin Schneider</div>
+            </div>
+            <div class="signature-right">
+                Filderstadt, 26.01.2026
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
